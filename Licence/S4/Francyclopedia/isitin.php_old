@@ -1,0 +1,142 @@
+<?php
+    function func_IsItIn($valeur) {
+             $filename='bdd/communes-infos.csv';
+             if ($handle = fopen($filename, 'r')) {
+                while($data = fgetcsv($handle, 1024, ",")){
+                            foreach($data as $tableau) {
+                                   if (strtoupper($valeur) == strtoupper($tableau)) {
+                                                                                        return $data;}
+                                                       }
+                                                          }       
+                return false;
+                }
+             else {
+                  throw new Exception("Error !! No database in the specified directory");
+             }
+    }
+
+
+/**fonction qui regroupe les communes d'une meme region d'un un nouveau tableau
+*@author Marechal Tanguy
+*@version 1.0
+**/
+function func_listeCommunes($region) {
+         $filename='bdd/communes-infos.csv';
+         $communes_de_la_region = array(); //on isole les communes de la région choisie de celles des autres régions    
+         if ($handle = fopen($filename, 'r')) {
+                while($data = fgetcsv($handle, 1024, ",")) {
+                        foreach($data as $tableau) {
+                                if (mb_strtoupper($region) == mb_strtoupper($tableau)) {
+                                          $communes_de_la_region[] = $data; 
+                                }
+                         } 
+                
+                }       
+                return $communes_de_la_region;
+         }
+   }
+
+
+
+//fonction qui gère l'affichage des communes par groupe de 15, changement de la sélection de 15 en appuyant sur le bouton correspondant
+function affichagepar15($region, $page_du_tableau) {
+$liste = func_listeCommunes($region);
+        $nb_pages_liste = ceil((count($liste))/15);//partie entière du nombre de communes dans la liste divisé par 15 (par page)
+                if ($nb_pages_liste == 0) {
+                        echo "Oups! Vous n'avez pas rentré une région !";
+                        }
+                else {          
+                        echo ("La région choisie comporte ".count($liste)." communes !</br></br><ul STYLE='list-style-type: none'>");   
+                                
+                        if ($page_du_tableau>6) {echo ("<button STYLE='font-size: 6pt' onclick='changement_de_page($region, ($page_du_tableau-(7)));document.forms[0].submit();'> << </button>");}
+			for ($j=(1+(floor($page_du_tableau/6))*6); $j<(7+((floor($page_du_tableau/6))*6)); $j++) {
+			$variable = "<button STYLE='font-size : 6pt' id='page' onclick='changement_de_page($region, ($j-1));document.forms[0].submit();'>$j </button>";
+//chaque bouton rappelle une nouvelle recherche et renvoie la partie de 15 communes demandées
+                        echo ($variable);}
+
+                        if ($page_du_tableau==$nb_pages_liste) {
+        //on se centre sur la première ville de la page de la liste
+                        
+                         echo "<script>window.onload=function(){start($X, $Y);}</script>";
+                        for ($i=15*($page_du_tableau); $i<count($liste); $i++) {
+                                $laCommune = $liste[$i][1];
+                                $X = floatval($liste[$i][3]);   
+                                $Y = floatval($liste[$i][4]);
+                                echo ("<li >$laCommune</li>");
+
+        echo "<script>var coordsup = new OpenLayers.LonLat($Y,$X); 
+        coordsup.transform(projSpherique,projCarte);
+        var markersup = new OpenLayers.Marker(coordsup);
+        calqueMarkers.addMarker(markersup);</script>";
+                        }
+                                }
+                        else
+                       	{	$X = floatval($liste[15*($page_du_tableau)][4]);	
+	    			$Y = floatval($liste[15*($page_du_tableau)][3]);
+				echo "<script>window.onload=function(){start($X, $Y);}</script>";
+   				for ($i=15*($page_du_tableau) ; $i<15+15*($page_du_tableau) ; $i++) {
+					$laCommune = $liste[$i][1];
+			    		$Xi = floatval($liste[$i][4]);	
+	    				$Yi = floatval($liste[$i][3]);
+					//ajouterMarqueur($Xi, $Yi);
+			     		echo ("<li >$laCommune</li>");
+				}
+			}
+			echo "</ul></br>";
+		}		
+	     }
+
+
+
+
+//traitement des requêtes
+    if (isset($_POST['recherche_com']) && ($_POST['recherche_region'] == "")) { //etude du champ de recherche principal
+        $resultat = func_IsItIn($_POST['recherche_com']); 
+        if ($resultat == false) {
+           echo "Oups! Ce que vous avez rentré n'est pas dans la base de données ...";
+        }
+        else {
+        //on etudie le contenu du champ de recherche
+        if  (strlen($_POST['recherche_com']) == 2) {//2 caractères : on est sur une région
+        $region = $_POST['recherche_com'];      
+        $page_du_tableau = $_POST['page_tableau'];
+        affichagepar15($region, $page_du_tableau);
+        } 
+        else {//c'est une commune
+             echo "La commune marquée \"".$_POST['recherche_com']."\" est bien répertoriée !</br></br>";
+             if (mb_strtoupper($_POST['recherche_com']) !== mb_strtoupper($resultat[1])) {
+             echo "Il s'agit de $resultat[1] </br></br>";
+             }
+             echo "<center><table><tr><td>Numéro INSEE</td><td>Commune</td><td>Population</td></tr><tr>";
+             for ($i=0; $i<count($resultat)-3; $i++) {
+                 echo "<td>$resultat[$i]</td>";
+             }
+             echo "</tr></table></center>";
+        /*$tableau = array(0 => $resultat);
+             echo ("<script>window.onload=function(){start($tableau);}</script>");*/
+             $X = floatval($resultat[4]);       
+             $Y = floatval($resultat[3]);               
+             echo "<script>window.onload=function(){start($X, $Y);}</script>";
+        }    
+        }
+        }
+        
+else
+//traitement du cas d'une region obtenue en cliquant sur sur la carte de la page d'accueil
+ if (isset($_POST['recherche_com']) && $_POST['recherche_region'] != "") {
+        $resultat = func_IsItIn($_POST['recherche_region']);
+        if ($resultat == false) {
+           echo "Oups! Ce que vous avez rentré n'est pas dans la base de données ...";
+        }
+        else {
+        //pas besoin d'étudier le contenu du champ de recherche, c'est forcément une région
+        $region = $_POST['recherche_region'];   
+        $page_du_tableau = $_POST['page_tableau'];
+        affichagepar15($region, $page_du_tableau);
+        } 
+        
+        } 
+        else {
+             include 'how_to.php';
+        }
+        ?>

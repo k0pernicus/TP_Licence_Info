@@ -1,0 +1,52 @@
+# Syntaxe.analyse "12";;
+- : Syntaxe.phrase = Syntaxe.Expr (Syntaxe.Expr_int 12)
+# Syntaxe.analyse true;;
+Error: This expression has type bool but an expression was expected of type
+         string
+# Syntaxe.analyse "true";;
+- : Syntaxe.phrase = Syntaxe.Expr (Syntaxe.Expr_bool true)
+# Syntaxe.analyse "x";;
+- : Syntaxe.phrase = Syntaxe.Expr (Syntaxe.Expr_var "x")
+# Syntaxe.analyse "(x+1)";;
+- : Syntaxe.phrase =
+Syntaxe.Expr
+ (Syntaxe.Expr_binaire (Syntaxe.Add, Syntaxe.Expr_var "x",
+   Syntaxe.Expr_int 1))
+# Syntaxe.analyse "(y && (not z))";;
+- : Syntaxe.phrase =
+Syntaxe.Expr
+ (Syntaxe.Expr_binaire (Syntaxe.And, Syntaxe.Expr_var "y",
+   Syntaxe.Expr_unaire (Syntaxe.Not, Syntaxe.Expr_var "z")))
+# Syntaxe.analyse "(0 <= x)";;
+- : Syntaxe.phrase =
+Syntaxe.Expr
+ (Syntaxe.Expr_binaire (Syntaxe.Inf, Syntaxe.Expr_int 0,
+   Syntaxe.Expr_var "x"))
+# Syntaxe.analyse "(-x)";;
+- : Syntaxe.phrase =
+Syntaxe.Expr (Syntaxe.Expr_unaire (Syntaxe.Moins, Syntaxe.Expr_var "x"))
+# Syntaxe.analyse "(not y)";;
+- : Syntaxe.phrase =
+Syntaxe.Expr (Syntaxe.Expr_unaire (Syntaxe.Not, Syntaxe.Expr_var "y"))
+# Syntaxe.analyse "(if (0 <= x) then x else (-x))";;
+- : Syntaxe.phrase =
+Syntaxe.Expr
+ (Syntaxe.Expr_cond
+   (Syntaxe.Expr_binaire (Syntaxe.Inf, Syntaxe.Expr_int 0,
+     Syntaxe.Expr_var "x"),
+   Syntaxe.Expr_var "x",
+   Syntaxe.Expr_unaire (Syntaxe.Moins, Syntaxe.Expr_var "x")))
+# Syntaxe.analyse "(f 3)";;
+- : Syntaxe.phrase =
+Syntaxe.Expr (Syntaxe.Expr_appl (Syntaxe.Expr_var "f", Syntaxe.Expr_int 3))
+# Syntaxe.analyse "let f = (fun x -> (if (0 <= x) then x else (-x)))";;
+- : Syntaxe.phrase =
+Syntaxe.Decl
+ (Syntaxe.Decla ("f",
+   Syntaxe.Expr_fonc ("x",
+    Syntaxe.Expr_cond
+     (Syntaxe.Expr_binaire (Syntaxe.Inf, Syntaxe.Expr_int 0,
+       Syntaxe.Expr_var "x"),
+     Syntaxe.Expr_var "x",
+     Syntaxe.Expr_unaire (Syntaxe.Moins, Syntaxe.Expr_var "x")))))
+

@@ -1,0 +1,24 @@
+# Syntaxe.analyse "(not 3)";;
+- : Syntaxe.phrase =
+Syntaxe.Expr (Syntaxe.Expr_unaire (Syntaxe.Not, Syntaxe.Expr_int 3))
+# Syntaxe.analyse "(12 && 15)";;
+- : Syntaxe.phrase =
+Syntaxe.Expr
+ (Syntaxe.Expr_binaire (Syntaxe.And, Syntaxe.Expr_int 12,
+   Syntaxe.Expr_int 15))
+# Syntaxe.analyse "(if 0 then 1 else 2)";;
+- : Syntaxe.phrase =
+Syntaxe.Expr
+ (Syntaxe.Expr_cond (Syntaxe.Expr_int 0, Syntaxe.Expr_int 1,
+   Syntaxe.Expr_int 2))
+# Syntaxe.analyse "(3 4)";;
+- : Syntaxe.phrase =
+Syntaxe.Expr (Syntaxe.Expr_appl (Syntaxe.Expr_int 3, Syntaxe.Expr_int 4))
+# Syntaxe.analyse "(12 -3)";;
+- : Syntaxe.phrase =
+Syntaxe.Expr (Syntaxe.Expr_appl (Syntaxe.Expr_int 12, Syntaxe.Expr_int (-3)))
+# Syntaxe.analyse "(12 - 3)";;
+- : Syntaxe.phrase =
+Syntaxe.Expr
+ (Syntaxe.Expr_binaire (Syntaxe.Sub, Syntaxe.Expr_int 12, Syntaxe.Expr_int 3))
+

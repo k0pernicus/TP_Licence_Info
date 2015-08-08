@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Syntaxe.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Lexical" rel="Chapter" href="Lexical.html">
+<link title="Syntaxe" rel="Chapter" href="Syntaxe.html">
+<link title="Evaluation" rel="Chapter" href="Evaluation.html"><title>miniCaml : Evaluation</title>
+</head>
+<body>
+<div class="navbar"><a href="Syntaxe.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;</div>
+<center><h1>Module <a href="type_Evaluation.html">Evaluation</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Evaluation: <code class="code">sig</code> <a href="Evaluation.html">..</a> <code class="code">end</code></pre>Evaluateur de phrases pour mini CAML
+   Evaluation par valeurs. Liaison dynamique.
+<p>
+
+   Necessite les modules <code class="code">Lexical</code> et <code class="code">Syntaxe</code>.
+<p>
+
+   Compilation<ul>
+<li><code class="code">ocamlc -c lexical.cmo syntaxe.cmo evaluation.ml{i}</code></li>
+</ul>
+<br>
+<b>Author(s):</b> FIL - IEEA - Univ. Lille1<br>
+<hr width="100%">
+<br><code><span id="TYPEvaleur"><span class="keyword">type</span> <code class="type"></code>valeur</span> = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Valeur</span> <span class="keyword">of</span> <code class="type"><a href="Syntaxe.html#TYPEexpression">Syntaxe.expression</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Liaison</span> <span class="keyword">of</span> <code class="type">(string * <a href="Evaluation.html#TYPEvaleur">valeur</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Aucune</span></code></td>
+
+</tr></table>
+
+
+<pre><span id="TYPEenvironnement"><span class="keyword">type</span> <code class="type"></code>environnement</span> = <code class="type">(string * <a href="Evaluation.html#TYPEvaleur">valeur</a>) list</code> </pre>
+
+<pre><span id="EXCEPTIONVariable_non_liee"><span class="keyword">exception</span> Variable_non_liee</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+<pre><span id="EXCEPTIONCondition_incorrecte"><span class="keyword">exception</span> Condition_incorrecte</span></pre>
+<pre><span id="EXCEPTIONApplication_impossible"><span class="keyword">exception</span> Application_impossible</span></pre>
+<pre><span id="EXCEPTIONTypage_incorrect"><span class="keyword">exception</span> Typage_incorrect</span></pre>
+<pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type"><a href="Evaluation.html#TYPEenvironnement">environnement</a> -><br>       <a href="Syntaxe.html#TYPEphrase">Syntaxe.phrase</a> -> <a href="Evaluation.html#TYPEenvironnement">environnement</a> * <a href="Evaluation.html#TYPEvaleur">valeur</a></code></pre><div class="info">
+<code class="code">eval env p</code> renvoie un couple contenant un (nouvel) environnement, ainsi que la valeur de la phrase <code class="code">p</code> evaluee dans l'environnement <code class="code">env</code>.
+<p>
+
+   Si la phrase <code class="code">p</code> est une declaration de la forme
+   <code class="code">let x = e</code>,
+   l'environnement obtenu en retour est 
+   <code class="code">(x,v) :: env</code>,
+   dans lequel <code class="code">v</code> est la valeur dans l'environnement <code class="code">env</code> de l'expression <code class="code">e</code>.
+<p>
+
+   Si la phrase <code class="code">p</code> est une expression, l'environnement obtenu en retour est <code class="code">env</code>.<br>
+</div>
+</body></html>

@@ -1,0 +1,27 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Lexical" rel="Chapter" href="Lexical.html">
+<link title="Syntaxe" rel="Chapter" href="Syntaxe.html">
+<link title="Evaluation" rel="Chapter" href="Evaluation.html"><title>miniCaml : Evaluation</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;valeur&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Valeur</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Syntaxe</span>.expression<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Liaison</span>&nbsp;<span class="keyword">of</span>&nbsp;(string&nbsp;*&nbsp;<span class="constructor">Evaluation</span>.valeur)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Aucune</span><br>
+&nbsp;&nbsp;<span class="keyword">and</span>&nbsp;environnement&nbsp;=&nbsp;(string&nbsp;*&nbsp;<span class="constructor">Evaluation</span>.valeur)&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Variable_non_liee</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Condition_incorrecte</span><br>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Application_impossible</span><br>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Typage_incorrect</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;eval&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Evaluation</span>.environnement&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Syntaxe</span>.phrase&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Evaluation</span>.environnement&nbsp;*&nbsp;<span class="constructor">Evaluation</span>.valeur<br>
+<span class="keyword">end</span></code></body></html>

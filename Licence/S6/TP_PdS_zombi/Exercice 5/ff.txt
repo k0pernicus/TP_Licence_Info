@@ -1,0 +1,45 @@
+Script started on Thu Feb  6 13:39:20 2014
+[?1034hbash-3.2$ ls
+Makefile	ff.txt		forkfork.c	forkfork.h	typescript
+bash-3.2$ make
+gcc -Wall -Werror -ansi -pedantic -D_XOPEN_SOURCE=500 -g forkfork.c -o forkfork
+bash-3.2$ ls
+Makefile	forkfork	forkfork.dSYM	typescript
+ff.txt		forkfork.c	forkfork.h
+bash-3.2$ ./fi[Korf[Kkfork
+Je suis le père 518 de 519
+Je suis le fils 519
+Je suis le petit-fils 520, fils de 519
+Je suis le processus 518, et je suis toujours vivant!!
+bash-3.2$ ./forkfork 4
+Je suis le père 523 de 524
+Je suis le fils 524
+Je suis le petit-fils 525, fils de 524
+J'exécute la fonction FACTORIELLE, et j'obtiens...24
+Maintenant, je suis devenu le fils de 1
+Je suis le processus 523, et je suis toujours vivant!!
+bash-3.2$ ./forkfork 4[K6
+Je suis le père 526 de 527
+Je suis le fils 527
+Je suis le petit-fils 528, fils de 527
+J'exécute la fonction FACTORIELLE, et j'obtiens...720
+Maintenant, je suis devenu le fils de 1
+Je suis le processus 526, et je suis toujours vivant!!
+bash-3.2$ ./forkfork 6[K19
+Je suis le père 529 de 530
+Je suis le fils 530
+Je suis le petit-fils 531, fils de 530
+J'exécute la fonction FACTORIELLE, et j'obtiens...109641728
+Maintenant, je suis devenu le fils de 1
+Je suis le processus 529, et je suis toujours vivant!!
+bash-3.2$ ./forkfork 19`[K
+Je suis le père 532 de 533
+Je suis le fils 533
+Je suis le petit-fils 534, fils de 533
+J'exécute la fonction FACTORIELLE, et j'obtiens...109641728
+Maintenant, je suis devenu le fils de 1
+Je suis le processus 532, et je suis toujours vivant!!
+bash-3.2$ exit
+exit
+
+Script done on Thu Feb  6 13:40:30 2014

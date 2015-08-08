@@ -1,0 +1,14 @@
+# eval [] (analyse("(false && true)"));;
+- : environnement * valeur = ([], Valeur (Expr_int 0))
+# eval [] (analyse("(1+1)"));;
+- : environnement * valeur = ([], Valeur (Expr_int 0))
+# eval [] (analyse("(1/0)"));;
+- : environnement * valeur = ([], Valeur (Expr_int 0))
+# eval [] (analyse("(true <= false)"));;
+- : environnement * valeur = ([], Valeur (Expr_int 0))
+# eval [] (analyse("(1 <= 2)"));;
+- : environnement * valeur = ([], Valeur (Expr_int 0))
+# eval [] (analyse("(1 * 2)"));;
+- : environnement * valeur = ([], Valeur (Expr_int 0))
+# eval [] (analyse("(1 - 2)"));;
+- : environnement * valeur = ([], Valeur (Expr_int 0))

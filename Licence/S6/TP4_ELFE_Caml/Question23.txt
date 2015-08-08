@@ -1,0 +1,9 @@
+eval [] (analyse ("(fun x-> (x+1))"));;
+- : environnement * valeur = ([], Valeur (Expr_int 0))
+# eval [] (analyse ("let f = (fun x -> (x+1))"));;
+- : environnement * valeur =
+([("f",
+   Valeur (Expr_fonc ("x", Expr_binaire (Add, Expr_var "x", Expr_int 1))))],
+ Liaison
+  ("f",
+   Valeur (Expr_fonc ("x", Expr_binaire (Add, Expr_var "x", Expr_int 1)))))

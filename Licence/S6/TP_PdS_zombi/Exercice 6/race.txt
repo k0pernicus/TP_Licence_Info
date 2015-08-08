@@ -1,0 +1,96 @@
+Script started on Thu Feb  6 13:41:00 2014
+[?1034hbash-3.2$ ls
+Makefile	race.c		race.txt	typescript
+bash-3.2$ make
+gcc -Wall -Werror -ansi -pedantic -D_XOPEN_SOURCE=500 -g race.c -o race
+bash-3.2$ ls
+Makefile	race.c		race.txt
+race		race.dSYM	typescript
+bash-3.2$ ./race
+
+Je suis 563, j'ai compté jusque 5000000, et je vais recompter... 563 a fini de compter!
+Je suis 562, j'ai compté jusque 5000000, et je vais recompter... 562 a fini de compter!
+Je suis 565, j'ai compté jusque 5000000, et je vais recompter... 565 a fini de compter!
+Je suis 564, j'ai compté jusque 5000000, et je vais recompter... 564 a fini de compter!
+Je suis 566, j'ai compté jusque 5000000, et je vais recompter... 566 a fini de compter!
+Je suis 567, j'ai compté jusque 5000000, et je vais recompter... 567 a fini de compter!
+Je suis 568, j'ai compté jusque 5000000, et je vais recompter... 568 a fini de compter!
+Je suis 569, j'ai compté jusque 5000000, et je vais recompter... 569 a fini de compter!
+Je suis 570, j'ai compté jusque 5000000, et je vais recompter... 570 a fini de compter!
+Je suis 571, j'ai compté jusque 5000000, et je vais recompter... 571 a fini de compter!
+bash-3.2$ ./race
+
+Je suis 574, j'ai compté jusque 5000000, et je vais recompter... 574 a fini de compter!
+Je suis 575, j'ai compté jusque 5000000, et je vais recompter... 575 a fini de compter!
+Je suis 576, j'ai compté jusque 5000000, et je vais recompter... 576 a fini de compter!
+Je suis 573, j'ai compté jusque 5000000, et je vais recompter... 573 a fini de compter!
+Je suis 577, j'ai compté jusque 5000000, et je vais recompter... 577 a fini de compter!
+Je suis 578, j'ai compté jusque 5000000, et je vais recompter... 578 a fini de compter!
+Je suis 579, j'ai compté jusque 5000000, et je vais recompter... 579 a fini de compter!
+Je suis 580, j'ai compté jusque 5000000, et je vais recompter... 580 a fini de compter!
+Je suis 581, j'ai compté jusque 5000000, et je vais recompter... 581 a fini de compter!
+Je suis 582, j'ai compté jusque 5000000, et je vais recompter... 582 a fini de compter!
+bash-3.2$ ./race
+
+Je suis 586, j'ai compté jusque 5000000, et je vais recompter... 586 a fini de compter!
+Je suis 584, j'ai compté jusque 5000000, et je vais recompter... 584 a fini de compter!
+Je suis 587, j'ai compté jusque 5000000, et je vais recompter... 587 a fini de compter!
+Je suis 585, j'ai compté jusque 5000000, et je vais recompter... 585 a fini de compter!
+Je suis 588, j'ai compté jusque 5000000, et je vais recompter... 588 a fini de compter!
+Je suis 589, j'ai compté jusque 5000000, et je vais recompter... 589 a fini de compter!
+Je suis 590, j'ai compté jusque 5000000, et je vais recompter... 590 a fini de compter!
+Je suis 591, j'ai compté jusque 5000000, et je vais recompter... 591 a fini de compter!
+Je suis 592, j'ai compté jusque 5000000, et je vais recompter... 592 a fini de compter!
+Je suis 593, j'ai compté jusque 5000000, et je vais recompter... 593 a fini de compter!
+bash-3.2$ ./race
+
+Je suis 596, j'ai compté jusque 5000000, et je vais recompter... 596 a fini de compter!
+Je suis 595, j'ai compté jusque 5000000, et je vais recompter... 595 a fini de compter!
+Je suis 597, j'ai compté jusque 5000000, et je vais recompter... 597 a fini de compter!
+Je suis 598, j'ai compté jusque 5000000, et je vais recompter... 598 a fini de compter!
+Je suis 599, j'ai compté jusque 5000000, et je vais recompter... 599 a fini de compter!
+Je suis 600, j'ai compté jusque 5000000, et je vais recompter... 600 a fini de compter!
+Je suis 601, j'ai compté jusque 5000000, et je vais recompter... 601 a fini de compter!
+Je suis 602, j'ai compté jusque 5000000, et je vais recompter... 602 a fini de compter!
+Je suis 603, j'ai compté jusque 5000000, et je vais recompter... 603 a fini de compter!
+Je suis 604, j'ai compté jusque 5000000, et je vais recompter... 604 a fini de compter!
+bash-3.2$ ./race
+
+Je suis 606, j'ai compté jusque 5000000, et je vais recompter... 606 a fini de compter!
+Je suis 607, j'ai compté jusque 5000000, et je vais recompter... 607 a fini de compter!
+Je suis 609, j'ai compté jusque 5000000, et je vais recompter... 609 a fini de compter!
+Je suis 608, j'ai compté jusque 5000000, et je vais recompter... 608 a fini de compter!
+Je suis 610, j'ai compté jusque 5000000, et je vais recompter... 610 a fini de compter!
+Je suis 611, j'ai compté jusque 5000000, et je vais recompter... 611 a fini de compter!
+Je suis 612, j'ai compté jusque 5000000, et je vais recompter... 612 a fini de compter!
+Je suis 613, j'ai compté jusque 5000000, et je vais recompter... 613 a fini de compter!
+Je suis 614, j'ai compté jusque 5000000, et je vais recompter... 614 a fini de compter!
+Je suis 615, j'ai compté jusque 5000000, et je vais recompter... 615 a fini de compter!
+bash-3.2$ ./race
+
+Je suis 617, j'ai compté jusque 5000000, et je vais recompter... 617 a fini de compter!
+Je suis 618, j'ai compté jusque 5000000, et je vais recompter... 618 a fini de compter!
+Je suis 619, j'ai compté jusque 5000000, et je vais recompter... 619 a fini de compter!
+Je suis 620, j'ai compté jusque 5000000, et je vais recompter... 620 a fini de compter!
+Je suis 621, j'ai compté jusque 5000000, et je vais recompter... 621 a fini de compter!
+Je suis 622, j'ai compté jusque 5000000, et je vais recompter... 622 a fini de compter!
+Je suis 623, j'ai compté jusque 5000000, et je vais recompter... 623 a fini de compter!
+Je suis 624, j'ai compté jusque 5000000, et je vais recompter... 624 a fini de compter!
+Je suis 625, j'ai compté jusque 5000000, et je vais recompter... 625 a fini de compter!
+Je suis 626, j'ai compté jusque 5000000, et je vais recompter... 626 a fini de compter!
+bash-3.2$ ./race
+
+Je suis 630, j'ai compté jusque 5000000, et je vais recompter... 630 a fini de compter!
+Je suis 628, j'ai compté jusque 5000000, et je vais recompter... 628 a fini de compter!
+Je suis 629, j'ai compté jusque 5000000, et je vais recompter... 629 a fini de compter!
+Je suis 631, j'ai compté jusque 5000000, et je vais recompter... 631 a fini de compter!
+Je suis 632, j'ai compté jusque 5000000, et je vais recompter... 632 a fini de compter!
+Je suis 633, j'ai compté jusque 5000000, et je vais recompter... 633 a fini de compter!
+Je suis 634, j'ai compté jusque 5000000, et je vais recompter... 634 a fini de compter!
+Je suis 635, j'ai compté jusque 5000000, et je vais recompter... 635 a fini de compter!
+Je suis 636, j'ai compté jusque 5000000, et je vais recompter... 636 a fini de compter!
+Je suis 637, j'ai compté jusque 5000000, et je vais recompter... 637 a fini de compter!
+bash-3.2$ exit
+exit
+
+Script done on Thu Feb  6 13:41:38 2014

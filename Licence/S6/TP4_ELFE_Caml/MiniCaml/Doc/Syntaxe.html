@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Lexical.html">
+<link rel="next" href="Evaluation.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Lexical" rel="Chapter" href="Lexical.html">
+<link title="Syntaxe" rel="Chapter" href="Syntaxe.html">
+<link title="Evaluation" rel="Chapter" href="Evaluation.html"><title>miniCaml : Syntaxe</title>
+</head>
+<body>
+<div class="navbar"><a href="Lexical.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;<a href="Evaluation.html">Next</a>
+</div>
+<center><h1>Module <a href="type_Syntaxe.html">Syntaxe</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Syntaxe: <code class="code">sig</code> <a href="Syntaxe.html">..</a> <code class="code">end</code></pre>Analyse syntaxique du langage mini CAML.
+<p>
+
+   Necessite le module <code class="code">Lexical</code>.
+<p>
+
+   Compilation<ul>
+<li><code class="code">ocamlc -c lexical.cmo syntaxe.ml{i}</code></li>
+</ul>
+<br>
+<b>Author(s):</b> FIL - IEEA - Univ. Lille1<br>
+<hr width="100%">
+<br><code><span id="TYPEop_bin"><span class="keyword">type</span> <code class="type"></code>op_bin</span> = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Add</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Sub</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Mult</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Div</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">And</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Or</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Eq</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Inf</span></code></td>
+
+</tr></table>
+
+
+<br><code><span id="TYPEop_un"><span class="keyword">type</span> <code class="type"></code>op_un</span> = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Moins</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Not</span></code></td>
+
+</tr></table>
+
+
+<br><code><span id="TYPEphrase"><span class="keyword">type</span> <code class="type"></code>phrase</span> = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Decl</span> <span class="keyword">of</span> <code class="type"><a href="Syntaxe.html#TYPEdeclaration">declaration</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Expr</span> <span class="keyword">of</span> <code class="type"><a href="Syntaxe.html#TYPEexpression">expression</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Vide</span></code></td>
+
+</tr></table>
+
+
+<br><code><span id="TYPEdeclaration"><span class="keyword">type</span> <code class="type"></code>declaration</span> = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Decla</span> <span class="keyword">of</span> <code class="type">string * <a href="Syntaxe.html#TYPEexpression">expression</a></code></code></td>
+
+</tr></table>
+
+
+<br><code><span id="TYPEexpression"><span class="keyword">type</span> <code class="type"></code>expression</span> = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Expr_int</span> <span class="keyword">of</span> <code class="type">int</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Expr_bool</span> <span class="keyword">of</span> <code class="type">bool</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Expr_var</span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Expr_binaire</span> <span class="keyword">of</span> <code class="type"><a href="Syntaxe.html#TYPEop_bin">op_bin</a> * <a href="Syntaxe.html#TYPEexpression">expression</a> * <a href="Syntaxe.html#TYPEexpression">expression</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Expr_unaire</span> <span class="keyword">of</span> <code class="type"><a href="Syntaxe.html#TYPEop_un">op_un</a> * <a href="Syntaxe.html#TYPEexpression">expression</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Expr_cond</span> <span class="keyword">of</span> <code class="type"><a href="Syntaxe.html#TYPEexpression">expression</a> * <a href="Syntaxe.html#TYPEexpression">expression</a> * <a href="Syntaxe.html#TYPEexpression">expression</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Expr_fonc</span> <span class="keyword">of</span> <code class="type">string * <a href="Syntaxe.html#TYPEexpression">expression</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Expr_appl</span> <span class="keyword">of</span> <code class="type"><a href="Syntaxe.html#TYPEexpression">expression</a> * <a href="Syntaxe.html#TYPEexpression">expression</a></code></code></td>
+
+</tr></table>
+
+
+<pre><span id="EXCEPTIONErreur"><span class="keyword">exception</span> Erreur</span> <span class="keyword">of</span> <code class="type">int</code></pre>
+<pre><span id="VALanalyse"><span class="keyword">val</span> analyse</span> : <code class="type">string -> <a href="Syntaxe.html#TYPEphrase">phrase</a></code></pre><div class="info">
+<code class="code">analyse p</code> = analyse la phrase <code class="code">p</code> et renvoie la phrase en representation abstraite.
+<p>
+
+   Declenche l'exception <code class="code">Syntaxe.Erreur n</code> si <code class="code">p</code> syntaxiquement incorrect. <code class="code">n</code> est le numero d'ordre de l'element lexical sur lequel l'erreur de syntaxe a ete decouverte.<br>
+</div>
+<pre><span id="VALen_chaine"><span class="keyword">val</span> en_chaine</span> : <code class="type"><a href="Syntaxe.html#TYPEphrase">phrase</a> -> string</code></pre><div class="info">
+<code class="code">en_chaine p</code> = chaine contenant une representation dans le langage mini CAML de la phrase <code class="code">p</code>.<br>
+</div>
+</body></html>

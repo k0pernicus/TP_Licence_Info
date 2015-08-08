@@ -1,0 +1,298 @@
+CAPTURES DE TRAMES
+
+=Question 1
+	  'ifconfig' permet de configurer une interface réseau
+	  L'option 'a' permet d'afficher toutes les interfaces actuellement disponibles, même si elles ne sont pas accessibles.
+
+=Question 2
+	  carette@b05p3:/tmp/carette$ ifconfig -a
+eth0      Link encap:Ethernet  HWaddr 84:c9:b2:37:93:68  
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 lg file transmission:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+          Interruption:18 Adresse de base:0xcf00 
+
+eth1      Link encap:Ethernet  HWaddr 00:1e:4f:d0:61:6d  
+          inet adr:192.168.5.53  Bcast:192.168.5.255  Masque:255.255.255.0
+          adr inet6: fe80::21e:4fff:fed0:616d/64 Scope:Lien
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:518 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:499 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 lg file transmission:1000 
+          RX bytes:124451 (121.5 KiB)  TX bytes:56504 (55.1 KiB)
+          Interruption:21 Mémoire:fe9e0000-fea00000 
+
+lo        Link encap:Boucle locale  
+          inet adr:127.0.0.1  Masque:255.0.0.0
+          adr inet6: ::1/128 Scope:Hôte
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:12 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:12 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 lg file transmission:0 
+          RX bytes:760 (760.0 B)  TX bytes:760 (760.0 B)
+
+=Question 3
+	  L'interface permettant de communiquer avec d'autres machines est l'interface 'eth1'
+
+=Question 4
+	  Adresse MAC : 00:1e:4f:d0:61:6d
+	  Adresse IPv4 : 192.168.5.53
+
+=Question 5
+	  carette@b05p3:/tmp/carette$ ping 192.168.5.52
+	  PING 192.168.5.52 (192.168.5.52) 56(84) bytes of data.
+	  64 bytes from 192.168.5.52: icmp_req=1 ttl=64 time=0.564 ms
+	  64 bytes from 192.168.5.52: icmp_req=2 ttl=64 time=0.211 ms
+	  64 bytes from 192.168.5.52: icmp_req=3 ttl=64 time=0.571 ms
+	  64 bytes from 192.168.5.52: icmp_req=4 ttl=64 time=0.211 ms
+	  64 bytes from 192.168.5.52: icmp_req=5 ttl=64 time=0.552 ms
+	  64 bytes from 192.168.5.52: icmp_req=6 ttl=64 time=0.563 ms
+	  64 bytes from 192.168.5.52: icmp_req=7 ttl=64 time=0.551 ms
+	  64 bytes from 192.168.5.52: icmp_req=8 ttl=64 time=0.212 ms
+	  ^C
+	  --- 192.168.5.52 ping statistics ---
+	  8 packets transmitted, 8 received, 0% packet loss, time 6999ms
+	  rtt min/avg/max/mdev = 0.211/0.429/0.571/0.169 ms
+	  carette@b05p3:/tmp/carette$ ping 192.168.5.54
+	  PING 192.168.5.54 (192.168.5.54) 56(84) bytes of data.
+	  64 bytes from 192.168.5.54: icmp_req=1 ttl=64 time=0.532 ms
+	  64 bytes from 192.168.5.54: icmp_req=2 ttl=64 time=0.565 ms
+	  64 bytes from 192.168.5.54: icmp_req=3 ttl=64 time=0.261 ms
+	  64 bytes from 192.168.5.54: icmp_req=4 ttl=64 time=0.555 ms
+	  64 bytes from 192.168.5.54: icmp_req=5 ttl=64 time=0.221 ms
+	  64 bytes from 192.168.5.54: icmp_req=6 ttl=64 time=0.263 ms
+	  64 bytes from 192.168.5.54: icmp_req=7 ttl=64 time=0.255 ms
+	  64 bytes from 192.168.5.54: icmp_req=8 ttl=64 time=0.558 ms
+	  ^C
+	  --- 192.168.5.54 ping statistics ---
+	  8 packets transmitted, 8 received, 0% packet loss, time 6999ms
+	  rtt min/avg/max/mdev = 0.221/0.401/0.565/0.152 ms
+
+=Question 6
+	  La valeur "Time" retournée par ping est le temps d'envoie et de réception pour la transmission d'un paquet.
+
+=Question 7
+	  L'adresse IP est moins compliquée à retenir que l'adresse MAC, elle est plus accessible.
+
+
+=Question 8
+	  Le seul protocole utilisé est ICMP.
+	  Les paquets envoyés sont des 'Echo request' et 'Echo reply'.
+
+=Question 9
+	  Le protocole ICMP appartient aux couches hautes (pour 'Echo request' et 'Echo reply'.
+
+ETHERNET
+
+=Question 1
+	  Utilisation de WireShark -> dans le champ 'Ethernet II'
+
+=Question 2
+	  Destination = 00:1e:4f:d0:61:6d
+	  Source = 00:1e:4f:d0:07:f3
+
+=Question 3
+	  carette@b05p3:/tmp/carette$ sudo mii-tool 
+	  eth0: no link
+	  SIOCGMIIREG on eth1 failed: Input/output error
+	  SIOCGMIIREG on eth1 failed: Input/output error
+	  eth1: negotiated 100baseTx-FD, link ok
+	  
+	  carette@b05p3:/tmp/carette$ sudo ethtool eth1
+	  Settings for eth1:
+	Supported ports: [ TP ]
+	Supported link modes:   10baseT/Half 10baseT/Full 
+	                        100baseT/Half 100baseT/Full 
+	                        1000baseT/Full 
+	Supported pause frame use: No
+	Supports auto-negotiation: Yes
+	Advertised link modes:  10baseT/Half 10baseT/Full 
+	                        100baseT/Half 100baseT/Full 
+	                        1000baseT/Full 
+	Advertised pause frame use: No
+	Advertised auto-negotiation: Yes
+	Speed: 100Mb/s
+	Duplex: Full
+	Port: Twisted Pair
+	PHYAD: 1
+	Transceiver: internal
+	Auto-negotiation: on
+	MDI-X: off
+	Supports Wake-on: pumbg
+	Wake-on: g
+	Current message level: 0x00000001 (1)
+			       drv
+	Link detected: yes
+
+	Il s'agit d'un FULL DUPLEX avec vitesse de 100Mb/s.
+	
+	EthTool permet de donner des requêtes ou de controler les paramètres du/des driver(s) ainsi que du matériel hardware; tandis que mii-tool permet de voir et manipuler les statuts d'interface indépendamment les uns des autres.
+
+=Question 4
+	  eth0: no link
+	  SIOCGMIIREG on eth1 failed: Input/output error
+	  SIOCGMIIREG on eth1 failed: Input/output error
+	  eth1: no link
+
+	  Pas de lien avec eth1
+
+	  carette@b05p3:/tmp/carette$ ifconfig -a
+eth0      Link encap:Ethernet  HWaddr 84:c9:b2:37:93:68  
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 lg file transmission:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+          Interruption:18 Adresse de base:0xcf00 
+
+eth1      Link encap:Ethernet  HWaddr 00:1e:4f:d0:61:6d  
+          inet adr:192.168.5.53  Bcast:192.168.5.255  Masque:255.255.255.0
+          adr inet6: fe80::21e:4fff:fed0:616d/64 Scope:Lien
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:2755 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1488 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 lg file transmission:1000 
+          RX bytes:325755 (318.1 KiB)  TX bytes:157416 (153.7 KiB)
+          Interruption:21 Mémoire:fe9e0000-fea00000 
+
+lo        Link encap:Boucle locale  
+          inet adr:127.0.0.1  Masque:255.0.0.0
+          adr inet6: ::1/128 Scope:Hôte
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:162 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:162 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 lg file transmission:0 
+          RX bytes:20832 (20.3 KiB)  TX bytes:20832 (20.3 KiB)
+
+	  Pour eth1 -> interruption donc erreur sur réseau; pas de transmission de paquets vers l'extérieur ni réception.
+
+	  ifconfig -> "RUNNING" a disparu, mais les paramètres IP sont conservés.
+
+CONCENTRATEUR
+
+=Question 1
+	  Transmission et réception de paquets par/pour toutes les machines connectées sur le HUB -> répétition du signal pour tous.
+	  Je ne reçois pas les données que j'ai moi-même émises.
+
+=Question 2 
+	  Nous ne recevons plus que les paquets arrivant sur la machine dont l'adresse MAC est donnée en filtre (eth.addr==...)
+
+=Question 3
+	  half-duplex : Nous ne pouvons émettre et recevoir en même temps: on émet OU on reçoit
+
+=Question 4
+	  On est sur du 1Gbit/s; 
+	  Topologie physique: Etoile
+	  Topologie logique: Bus
+
+=Question 5
+	Sur le HUB:
+	carette@b05p11:/tmp/carette$ iperf -c 192.168.5.56
+	------------------------------------------------------------
+	Client connecting to 192.168.5.56, TCP port 5001
+	TCP window size: 21.0 KByte (default)
+	------------------------------------------------------------
+	[  3] local 192.168.5.61 port 41506 connected with 192.168.5.56 port 5001
+	[ ID] Interval       Transfer     Bandwidth
+	[  3]  0.0-10.1 sec  11.1 MBytes  9.23 Mbits/sec
+
+	Le HUB répercute et amplifie le signal vers toutes les machines connectées dessus, et non pas vers LA machine avec laquelle il veut discuter - le débit se retrouve donc réduit, par rapport au SWITCH.
+	Via effet de bore, les machines connectées sur le HUB peuvent écouter/espionner les données qui ne leur sont pas destiné; cela surcharge aussi la machine écoutante (avec le mode "promiscious").
+
+	Avec 3 personnes et un serveur:
+	carette@b05p11:/tmp/carette$ iperf -c 192.168.5.116
+	------------------------------------------------------------
+	Client connecting to 192.168.5.116, TCP port 5001
+	TCP window size: 21.0 KByte (default)
+	------------------------------------------------------------
+	[  3] local 192.168.5.61 port 43435 connected with 192.168.5.116 port 5001
+	[ ID] Interval       Transfer     Bandwidth
+	[  3]  0.0-11.1 sec  3.38 MBytes  2.54 Mbits/sec
+	-> DIVISION PAR 3 : 33% des performances ici (voir par rapport au iperf précédent)
+
+COMMUTATEUR
+
+=Question 1
+	Sur le SWITCH:
+	carette@b05p11:/tmp/carette$ iperf -c 192.168.5.116
+	------------------------------------------------------------
+	Client connecting to 192.168.5.116, TCP port 5001
+	TCP window size: 21.0 KByte (default)
+	------------------------------------------------------------
+	[  3] local 192.168.5.61 port 43438 connected with 192.168.5.116 port 5001
+	[ ID] Interval       Transfer     Bandwidth
+	[  3]  0.0-10.0 sec   113 MBytes  94.8 Mbits/sec
+	
+=Question 2
+	  Le switch a obtenu les adresses MAC par ping, de chacune des machines. Il y a alors association adresse MAC / port de Switch, afin de savoir à quelle machine est associée chaque port; afi de pouvoir envoyer seulement des données à une machine précise -> utilité de la table de commutation.
+
+=Question 3
+	  Pour fonctionner, le Switch a nécessairement besoin de connaître les adresses MAC des trames, afin de savoir à qui envoyer les données. Le switch lit l'entête Ethernet des trames pour associer l'@-MAC source à un numéro de port, et envoyer (si l'association existe) l'@-destinataire vers le bon port (filtrage).
+	  Le Switch fonctionne seulement avec les adresses MAC; il regarde les trames ETHERNET, il regarde l'adresse MAC et fait l'association par la suite. Il n'a donc aucun besoin des adresse IP des paquets!
+	  On peut donc en déduire que le niveau du modèle OSI est : LIAISON, car on ne travaille pas avec l'@-IP.
+
+=Question 4
+	  -> Meilleures performances: pas de collisions, connexion en FULL-Duplex.
+	  -> Meilleure sécurité: une machine ne voit pas ce qui circule en unicast entre 2 autres machines.
+
+=Question 5
+	  Quand envoie d'un paquet en broadcast via Switch, envoie pour toutes les machines connectées au Switch. Le type de transfert est appelé "diffusion générale" ou "broadcast".
+	  @MAC destinataire: ff:ff:ff:ff:ff:ff
+	  
+ROUTEUR
+
+=Question 6
+
+	  carette@b05p13:/tmp/carette$ sudo route
+	  Table de routage IP du noyau
+	  Destination     Passerelle      Genmask         Indic Metric Ref    Use Iface
+	  default         192.168.5.200   0.0.0.0         UG    0      0        0 eth1
+	  192.168.5.0     *               255.255.255.0   U     0      0        0 eth1
+
+	  Le routeur est au niveau RESEAU.
+	  Le paquet est transmis vers le routeur, qui le redirige vers la machine voulue; cette machine nous renvoie un paquet 'reply'.
+	  L'adresse mac de la trame reçue est celle de la machine connectée en eth1; l'adresse mac de la trame envoyée est celle du routeur (elle est aussi sur eth1) -> L'ADRESSE MAC CHANGE, LE PA          QUET IP RESTE LE MÊME!
+
+=Question 7
+
+D = Départ
+A = Arrivée
+	  ________    ________    ________    _______
+Couche3	  |  D   |    |      |    |      |    |  A  |
+RESEAU	  |  *   |    |      |    | **** |    |  *  |
+----------|--*---|----|------|----|-*--*-|----|--*--|-
+Couche2	  |  *   |    |      |    | *  * |    |  *  |
+LIAISON	  |  *   |    | **** |    | *  * |    |  *  |
+----------|--*---|----|-*--*-|----|-*--*-|----|--*--|-
+Couche1	  |  ****|****|**  **|****|**  **|****|***  |
+PHYSIQUE  |______|    |______|    |______|    |_____|
+	     |                      |  |         |
+	     |______________________|  |_________|
+
+	Copyleft Carette Antonin.
+
+=Question 8
+	  TOUTES les machines du réseau 192.168.5.0 reçoivent le ping émis par une machine 192.168.5.X.
+	  Le routeur filtre le broadcast par défaut, ce qui fait que la machine situé sur le réseau 192.168.1.0 ne reçoit rien.
+
+=Question 9
+	  Les machines du réseau 192.168.5.0 ne reçoivent pas le broadcast de la machine 192.168.1.100.
+
+=Question 10
+	  Nous recevons une réponse de la part de toutes les machines connectées sur le réseau et auxquelles nous souhaitons envoyer le/les paquet(s).
+	  L'adresse IP des paquets reçus vient de la machine qui a envoyé le paquet, et non pas du routeur.
+	  Ce mode est désactivé par défaut car, si X machines sont connectées (avec X très grand), nous allons voir absolument tout le trafic transitant sur le réseau, ce qui implique une surcharg          e au niveau visuel de ce qu'il se passe sur le réseau réellement.
+
+=Question 11
+	  Diffusion limitée: concerne toutes les machines connectées sur le réseau.
+	  Diffusion dirigée: communication par l'intermédiaire du routeur qui se charge de rediriger les paquets vers les machines.
+	  Diffusion unicast: diffusion directe entre 2 machines
+
+=Question 12
+	  Comme nous l'avons vu précédemment, le switch ne modifie pas le paquet, il se contente juste d'associer les @MAC avec les @IP et de rediriger le paquet transmis vers la/les bonne(s) machine(s). Contrairement au routeur, qui modifie l'entête du paquet - en effet, il enlève la trame ethernet en tête, mais garde le reste du paquet.
+
+
+ARP
+

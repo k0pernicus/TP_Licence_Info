@@ -1,0 +1,7 @@
+Forçage de type ci-dessous:
+val eval : environnement -> Syntaxe.phrase -> environnement * valeur = <fun>
+# eval [] (analyse "12");;
+- : environnement * valeur = ([], Valeur (Expr_int 0))
+# eval [] (analyse ("let x=1"));;
+- : environnement * valeur =
+([("x", Valeur (Expr_int 1))], Liaison ("x", Valeur (Expr_int 1)))

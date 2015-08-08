@@ -1,0 +1,37 @@
+Script started on Wed Jan 15 15:07:30 2014
+
+bash-3.2$ ./maccess -r /bin/ls
+Accès 4, code sortie: 0
+
+bash-3.2$ ./maccess -rv /bin/ls
+Accès de /bin/ls en mode 4 autorisé
+
+bash-3.2$ ./maccess -rwx /bin/ls
+Accès 4, code sortie: 0
+Accès 2, code sortie: -1
+Accès 1, code sortie: 0
+
+bash-3.2$ ./maccess -rwxv /bin/ls
+Accès de /bin/ls en mode 4 autorisé
+Le droit d'accès demandé au fichier n'est pas positionné : Permission denied
+Accès de /bin/ls en mode 1 autorisé
+
+bash-3.2$ ./maccess -rv /bin/lss
+Le fichier n'existe pas : No such file or directory
+
+bash-3.2$ ./maccess -rv /bin/ls/ls 
+Une des composantes du nom de fichier n'est pas un répertoire : Not a directory
+
+bash-3.2$ ./maccess -rv /bin/jevaisfaireunnomdedossiersuperlongparcequillefautetttoutettoutmaiscelanemederangepasnoncarjaimebienecriresansespaceniaccentafindepouvvoirdesorienterlapersonnequimelitetpuiscestamusantaussidepouvoirecriresansseposerrdequestionssurlesespacesetaccentsettoutettoutenfinbrefjaibientotfinietsivousavezzreussiamelirecelaveutdirequevousetesfort/jevaisfaireunnouveaunomdedossiersuperloongcarNonenfaitjailaflemmeCairacommecapourlePATH/
+Une des composantes du nom de fichier est trop longue : File name too long
+
+bash-3.2$ ./maccess -rv test/commentjevaisfaireunnomdefichiersuperlongdelamortquitueettoutettoutettoutettoutjevoulaisdabordprendreunephrasedunfilmetenfaireunnomdefichiermaisenfaitcaseraipasdroleetpuissilapersonnequilitneconnaitpaslefilmnilareferencebencatombealeauEnfinbrefENFAITILESTPASASSEZLONGDONCJEVAISDEVOIRAUGMENTERTOUTCAETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUTETTOUT.txt
+Le nom du fichier est trop long : File name too long
+
+bash-3.2$ cd test/ && ln -s self self && cd ../ && ./maccess -rv test/self 
+Le nom du fichier comporte trop de liens symboliques : Too many levels of symbolic links
+
+bash-3.2$ exit
+exit
+
+Script done on Wed Jan 15 15:23:27 2014

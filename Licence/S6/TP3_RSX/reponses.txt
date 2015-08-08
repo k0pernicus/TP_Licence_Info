@@ -1,0 +1,79 @@
+--> Message reçu (exercice 1):
+
+08bb 8580 0001 0002 0002 0002 0377 7777 
+046c 6966 6c02 6672 0000 0100 01c0 0c00
+0500 0100 0054 6000 0805 7072 6f78 79c0
+10c0 2900 0100 0100 0054 6000 0486 ce10
+f4c0 1000 0200 0100 02a3 0000 1607 7265
+7365 7276 310b 756e 6976 2d6c 696c 6c65
+31c0 15c0 1000 0200 0100 02a3 0000 0a07
+7265 7365 7276 32c0 55c0 4d00 0100 0100
+0054 6000 04c1 31e1 0fc0 6f00 0100 0100
+0054 6000 04c1 31e1 5a
+
+En-tête: 08bb 8580 0001 0002 0002 0002
+Identifiant: 08bb
+Paramètres: 8580
+QDCOUNT: 0001
+ANCOUNT: 0002
+NSCOUNT: 0002
+ARCOUNT: 0002
+
+Paramètres en bits: 1000 0101 1000 0000 -> C'est une réponse(1er bit à '1'), suivi de 4 '0' donc c'est une requête simple, 1 bit à '1' ce qui signifie que le serveur a autorité sur le domaine, 1 bit à '0' donc le message n'est pas tronqué, 1 bit à '1' ce qui signifie que l'on a une demande de requête récursive, 1 bit à '1' ce qui signifie que le serveur peut faire une demande récursive, et ensuite que des bits à 0 : 3 bits non utilisés et le code de retour RCODE OK.
+
+QDCOUNT: 1 question
+
+ANCOUNT | NSCOUNT | ARCOUNT : 2 réponses, 2 authorités, 2 additionnels
+
+-->
+0377 7777 046c 6966 6c02 6672 : adresse www.lifl.fr
+77 77 77 : www
+6c 69 66 6c : lifl
+66 72 : fr
+
+00 : fin du nom
+0001 : type
+0001 : class (type INTERNET)
+
+0570 726f 7879 c010 : 5 octets avant le prochain séparateur
+70 : p
+72 : r
+6f : o
+78 : x
+79 : y
+c010 : pointeur vers lifl.fr 
+
+c029: pointe vers proxy.lifl.fr
+0010: Type A (a host address)
+0010: Classe Internet (IN)
+0000 5460: TTL
+0004: Taille des donn�es qui suivent, en nombre d'octets (ici: 4)
+86ce 10f4: IP '134.206.16.246' de proxy.lifl.fr
+
+c010: On trouve une autorit� sur le domaine "lifl.fr"
+0002: Type NS (an authoritative name server)
+0001: Classe Internet (IN)
+0002 a300: TTL
+0016: Taille des donn�es qui suivent, en nombre d'octets (ici: 22)
+0772 6573 6572 7631 0b75 6e69 762d 6c69 6c6c 6531 c015: NS RDATA format = "reserv1.univ-lille1.fr" -> Serveur de nom faisant autorit� sur le domaine "lifl.fr", classe Internet
+
+c010: On retrouve une autorit� sur le domaine "lifl.fr"
+0002: Type NS (an authoritative name server)
+0001: Classe Internet (IN)
+0002 a300: TTL
+000a: Taille des donn�es qui suivent en nombre d'octets (ici: 10)
+0772 6573 6572 7632 c055: NS RDATA format = "reserv2.univ-lille1.fr" -> Serveur de nom faisant autorit� sur le domaine "lifl.fr", classe Internet
+
+c04d: Serveur de nom "reserv1.univ-lille1.fr"
+0001: Type A (a host address)
+0001: Classe Internet (IN)
+0000 5460: TTL
+0004: Taille des donn�es qui suivent en nombre d'octets (ici: 4)
+c131 e10f: '193.49.225.15' -> @IP du serveur de nom 'reserv1.univ-lille1.fr'
+
+c06f: Serveur de nom "reserv2.univ-lille1.fr"
+0001: Type A (a host address)
+0001: Classe Internet (IN)
+0000 5460: TTL
+0004: Taille des donn�es qui suivent en nombre d'octets (ici: 4)
+c131 e15a: '193.49.225.90' -> @IP du serveur de nom 'reserv2.univ-lille1.fr'

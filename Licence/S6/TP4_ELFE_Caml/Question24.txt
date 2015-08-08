@@ -1,0 +1,2 @@
+eval [] (analyse("(- (3+1))"));;
+- : environnement * valeur = ([], Valeur (Expr_int 0))

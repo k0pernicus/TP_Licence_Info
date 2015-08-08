@@ -1,0 +1,69 @@
+body {
+background-image :url('../images/images_accueil/accueil_fond.jpg');
+background-repeat : no-repeat;
+background-position: top center;
+margin-right : auto;
+margin-left : auto;
+width : 1200px;
+}
+
+h1 {
+font-family : Vollkorn;
+font-style : italic;
+font-size : 36pt;
+color: green;
+text-shadow : 1px 2px 3mm grey;	
+margin-top : 2%;
+margin-left : 1%;
+}
+
+h2 {
+font-family : Vollkorn;
+font-style : italic;
+font-size : 20pt;
+color: green;
+text-shadow : 1px 2px 3mm grey;
+margin-bottom : 30%;
+margin-left : 1%;}
+
+#carte_fond {
+position: absolute;
+top : 5%;
+right :41%;
+z-index : 4;}
+
+#carte {
+position: absolute;
+top : 5%;
+right :41%;
+z-index : 10;}
+
+a {
+margin : auto;
+}
+
+#recherche {
+position: absolute;
+top : 31%;
+left : 61%;
+z-index : 3;}
+
+#txt_recherche {
+position: absolute;
+font-family : Vollkorn;
+font-size : 16pt;
+color : white;
+left : 61%;
+top : 25%;
+z-index: 4;
+}
+
+#recherche_complementaire {
+position: absolute;
+font-family : Vollkorn;
+font-size : 16pt;
+color : white;
+left: 61%;
+top : 40%;
+z-index:5;
+}

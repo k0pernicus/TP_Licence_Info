@@ -1,0 +1,6 @@
+Avant:
+# eval_expr;;
+- : 'a -> Syntaxe.expression -> valeur = <fun>
+
+Après forçage de type:
+val eval : environnement -> Syntaxe.phrase -> environnement * valeur = <fun>

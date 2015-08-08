@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Evaluation.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Lexical" rel="Chapter" href="Lexical.html">
+<link title="Syntaxe" rel="Chapter" href="Syntaxe.html">
+<link title="Evaluation" rel="Chapter" href="Evaluation.html">
+<link title="Minicaml" rel="Chapter" href="Minicaml.html"><title>miniCaml : Minicaml</title>
+</head>
+<body>
+<div class="navbar"><a href="Evaluation.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;</div>
+<center><h1>Module <a href="type_Minicaml.html">Minicaml</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Minicaml: <code class="code">sig</code> <a href="Minicaml.html">..</a> <code class="code">end</code></pre>Boucle d'interaction du langage mini CAML
+<p>
+
+    Necessite les modules <code class="code">Lexical</code>, <code class="code">Syntaxe</code> et <code class="code">Evaluation</code>.
+<p>
+
+    Compilation<ul>
+<li><code class="code">ocamlc -o minicaml lexical.cmo syntaxe.cmo evaluation.cmo minicaml.ml</code></li>
+</ul>
+<br>
+<b>Author(s):</b> FIL - IEEA - Univ. Lille1<br>
+<hr width="100%">
+<pre><span class="keyword">val</span> <a name="VALimprimer"></a>imprimer : <code class="type"><a href="Evaluation.html#TYPEvaleur">Evaluation.valeur</a> -> unit</code></pre><div class="info">
+<code class="code">imprimer v</code> imprime la valeur <code class="code">v</code>.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALinterprete"></a>interprete : <code class="type">(string * <a href="Evaluation.html#TYPEvaleur">Evaluation.valeur</a>) list -> unit -> 'a</code></pre><div class="info">
+<code class="code">interprete env ()</code> lance une boucle d'interaction du type read/eval/print.
+<p>
+
+   Les phrases du langage mini CAML <b>doivent</b> etre redigees sur une seule ligne.<br>
+</div>
+</body></html>
