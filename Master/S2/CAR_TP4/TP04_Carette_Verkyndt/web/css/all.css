@@ -1,0 +1,61 @@
+body {
+    background-image:url('../img/library.jpeg');
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat:no-repeat;
+    
+    color: white;
+    
+}
+
+fieldset {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 3px 5px 3px white;
+}
+
+legend {
+    text-decoration: underline;
+}
+
+#menu_appplications {
+    
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding-top: 15%;
+    
+    font-size: 20px;
+    
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+form {
+    padding-left: 20%;
+}
+
+input {
+    color: white;
+    float: right;
+    background-color: transparent;
+}
+
+table tr td:nth-child(1) {
+    text-align: left;
+    width: 50%;
+}
+
+footer {
+    margin-top: 35%;
+    margin-bottom: 30px;
+}

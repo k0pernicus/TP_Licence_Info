@@ -1,0 +1,32 @@
+Command line:
+   shiftanodes_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  54763
+
+Fri Sep 19 15:14:57 2014
+
+
+ Elaboration Time: 0.01 sec
+
+ Current Memory Usage: 115.536 Meg
+
+ Total Signals          : 47
+ Total Nets             : 37
+ Total Signal Drivers   : 9
+ Total Blocks           : 8
+ Total Primitive Blocks : 7
+ Total Processes        : 9
+ Total Traceable Variables  : 17
+ Total Scalar Nets and Variables : 524
+Total Line Count : 17
+Total Line Count : 17
+Total Line Count : 17
+Total Line Count : 17
+
+ Total Simulation Time: 1.19 sec
+
+ Current Memory Usage: 122.884 Meg
+
+Fri Sep 19 15:30:47 2014
+

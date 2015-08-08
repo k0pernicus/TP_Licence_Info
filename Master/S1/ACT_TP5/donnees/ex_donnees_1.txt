@@ -1,0 +1,16 @@
+5
+2
+3
+6
+4
+2
+5
+
+//
+// n - un nombre d'objets
+// x(1),
+// x(2),
+// ..
+// x(n-1)
+// x(n) - poids des n objets
+// c - capacité d'un sac

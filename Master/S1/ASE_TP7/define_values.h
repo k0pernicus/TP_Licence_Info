@@ -1,0 +1,13 @@
+#ifndef INCLUDE
+
+#define INCLUDE
+
+#define HDA_CMDREG 0x3F6
+#define HDA_DATAREGS 0x110
+#define HDA_IRQ 14
+#define HDA_MAXCYLINDER 16
+#define HDA_MAXSECTOR 16
+#define HDA_SECTORSIZE 512
+#define MAX_VOLUMES 8
+
+#endif

@@ -1,0 +1,2 @@
+sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/m1/carette/Documents/TP1/toplevel.vhf,-w,/home/m1/carette/Documents/TP1/toplevel.sch
+sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/m1/carette/Documents/TP1/afficheur.vhf,-w,/home/m1/carette/Documents/TP1/afficheur.sch

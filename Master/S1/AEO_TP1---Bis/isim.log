@@ -1,0 +1,141 @@
+ISim log file
+Running: /home/m1/carette/Documents/TP1/shiftanodes_isim_beh.exe -gui -tclbatch isim.cmd -wdb /home/m1/carette/Documents/TP1/shiftanodes_isim_beh.wdb 
+ISim M.81d (signature 0x141a37e9)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# isim force add /shiftanodes/clk 1 -radix hex -value 0 -radix hex -time 5 ns -repeat 10 ns
+# isim force add /shiftanodes/clk 1 -radix hex -value 0 -radix hex -time 5 ns -repeat 10 ns
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# isim force add /shiftanodes/enable190 1 -radix hex -value 0 -radix hex -time 5 ns -repeat 10 ns
+# isim force add /shiftanodes/enable190 1 -radix hex -value 0 -radix hex -time 5 ns -repeat 10 ns
+# restart
+# run 1.00us
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# restart
+# isim force add /shiftanodes/clk 1 -radix hex -value 0 -radix hex -time 5 ns -repeat 10 ns
+# isim force add /shiftanodes/clk 1 -radix hex -value 0 -radix hex -time 5 ns -repeat 10 ns
+# isim force add /shiftanodes/enable190 1 -radix hex -value 0 -radix hex -time 5 ns -repeat 10 ns
+# isim force add /shiftanodes/enable190 1 -radix hex -value 0 -radix hex -time 5 ns -repeat 10 ns
+# run 1.00us
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# restart
+# isim force add /shiftanodes/clk 1 -radix hex -value 0 -radix hex -time 5 ns -repeat 10 ns
+# isim force add /shiftanodes/clk 1 -radix hex -value 0 -radix hex -time 5 ns -repeat 10 ns
+# isim force add /shiftanodes/enable190 1 -radix hex -value 0 -radix hex -time 2500 ps -repeat 5 ns
+# isim force add /shiftanodes/enable190 1 -radix hex -value 0 -radix hex -time 10 ns -repeat 20 ns
+# isim force add /shiftanodes/enable190 1 -radix hex -value 0 -radix hex -time 10 ns -repeat 20 ns
+# run 1.00us
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# exit 0

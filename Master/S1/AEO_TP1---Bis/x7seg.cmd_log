@@ -1,0 +1,16 @@
+vhdtdtfi -lib work x7seg.vhd -prj TP1 -o x7seg.spl -module x7seg -template /usr/local/Xilinx/12.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 x7seg.spl /home/m1/carette/Documents/TP1/x7seg.sym 
+vhdtdtfi -prj TP1 -o /home/m1/carette/Documents/TP1/x7seg.vhi -lib work /home/m1/carette/Documents/TP1//x7seg.vhd -module x7seg -template /usr/local/Xilinx/12.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror 
+vhdtdtfi -prj TP1 -o /home/m1/carette/Documents/TP1/x7seg.vhi -lib work /home/m1/carette/Documents/TP1//x7seg.vhd -module x7seg -template /usr/local/Xilinx/12.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror 
+vhdtdtfi -prj TP1 -o /home/m1/carette/Documents/TP1/x7seg.vhi -lib work /home/m1/carette/Documents/TP1//x7seg.vhd -module x7seg -template /usr/local/Xilinx/12.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror 
+vhdtdtfi -lib work x7seg.vhd -prj TP1 -o x7seg.spl -module x7seg -template /usr/local/Xilinx/12.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 x7seg.spl /home/m1/carette/Documents/TP1/x7seg.sym 
+vhdtdtfi -lib work x7seg.vhd -prj TP1 -o x7seg.spl -module x7seg -template /usr/local/Xilinx/12.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 x7seg.spl /home/m1/carette/Documents/TP1/x7seg.sym 
+vhdtdtfi -lib work x7seg.vhd -prj TP1 -o x7seg.spl -module x7seg -template /usr/local/Xilinx/12.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 x7seg.spl /home/m1/carette/Documents/TP1/x7seg.sym 
+vhdtdtfi -lib work x7seg.vhd -prj TP1 -o x7seg.spl -module x7seg -template /usr/local/Xilinx/12.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 x7seg.spl /home/m1/carette/Documents/TP1/x7seg.sym 
+vhdtdtfi -prj TP1 -o /home/m1/carette/Documents/TP1/x7seg.vhi -lib work /home/m1/carette/Documents/TP1//x7seg.vhd -module x7seg -template /usr/local/Xilinx/12.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror 
+vhdtdtfi -lib work x7seg.vhd -prj TP1 -o x7seg.spl -module x7seg -template /usr/local/Xilinx/12.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 x7seg.spl /home/m1/carette/Documents/TP1/x7seg.sym 

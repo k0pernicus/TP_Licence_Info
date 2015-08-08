@@ -1,0 +1,69 @@
+grammar org.xtext.example.calculette.Calculette with org.eclipse.xtext.common.Terminals
+
+generate calculette "http://www.xtext.org/example/calculette/Calculette"
+
+/*
+ * Calculette est une suite de calculs
+ */
+Calculette:
+	(calculs+=Calc';')*
+;
+
+/*
+ * Un calcul est :
+ * 	- un résultat
+ * 	- une affectation
+ * 	- une conditionnelle
+ */
+Calc: 
+	e=Rst | e=Affec | e=Cond
+;
+
+/*
+ * Un résultat est formée d'une expression
+ */
+Rst:
+	e=Expr
+;
+
+/*
+ * Une affectation est formée d'un nom (un ID), '=' une expression
+ */
+Affec:
+	name = ID '=' right=Expr
+;
+
+/*
+ * Conditionnelle : if ... : x (else y)
+ */
+Cond:
+	'if' '(' condition=Boolean ')' ':' (if_rst+=Calc';')+ ('else' (else_rst+=Calc';')+)?
+;
+
+Boolean:
+	Term ({Expr.left=current} op=('<'|'<='|'>'|'>='|'=='|'!=') right=Expr)?
+;
+
+Expr:
+	Term ({Expr.left=current} op=('+'|'-') right=Expr)?
+;
+
+Term returns Expr:
+	Factor ({Expr.left=current} op=('*'|'/') right=Term)?
+;
+
+Factor returns Expr:
+	{Var} name=ID |
+	{LastVar} varName=VAR |
+	'(' Expr ')' |
+	{Number} (neg ?= '-')? value=INT
+;
+
+/*
+ * Les terminaux représentés par VAR sont les variables automatiques permettant de réutiliser les résultats des 3 calculs précédents
+ */
+terminal VAR : ('$1'|'$2'|'$3');
+/*
+ * Les terminaux représentés par BOOL représentent les booléens Vrai / Faux
+ */
+terminal BOOL : ('TRUE' | 'FALSE');

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"/home/m1/carette/Documents/TP1/toplevel.vhf" Line 318: Net &lt;<arg fmt="%s" index="1">XLXI_1_CLR_openSignal</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"/home/m1/carette/Documents/TP1/toplevel.vhf" Line 319: Net &lt;<arg fmt="%s" index="1">XLXI_2_CLR_openSignal</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"/home/m1/carette/Documents/TP1/toplevel.vhf" Line 528: Net &lt;<arg fmt="%s" index="1">XLXI_8_CLR_openSignal</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/home/m1/carette/Documents/TP1/toplevel.vhf</arg>&quot; line <arg fmt="%d" index="2">608</arg>: Output port &lt;<arg fmt="%s" index="3">CEO</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">XLXI_8</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/home/m1/carette/Documents/TP1/toplevel.vhf</arg>&quot; line <arg fmt="%d" index="2">608</arg>: Output port &lt;<arg fmt="%s" index="3">TC</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">XLXI_8</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">XLXI_8_CLR_openSignal</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/home/m1/carette/Documents/TP1/toplevel.vhf</arg>&quot; line <arg fmt="%d" index="2">370</arg>: Output port &lt;<arg fmt="%s" index="3">Q</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">XLXI_1</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/home/m1/carette/Documents/TP1/toplevel.vhf</arg>&quot; line <arg fmt="%d" index="2">370</arg>: Output port &lt;<arg fmt="%s" index="3">TC</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">XLXI_1</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/home/m1/carette/Documents/TP1/toplevel.vhf</arg>&quot; line <arg fmt="%d" index="2">378</arg>: Output port &lt;<arg fmt="%s" index="3">CEO</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">XLXI_2</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/home/m1/carette/Documents/TP1/toplevel.vhf</arg>&quot; line <arg fmt="%d" index="2">378</arg>: Output port &lt;<arg fmt="%s" index="3">Q0</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">XLXI_2</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/home/m1/carette/Documents/TP1/toplevel.vhf</arg>&quot; line <arg fmt="%d" index="2">378</arg>: Output port &lt;<arg fmt="%s" index="3">Q1</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">XLXI_2</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/home/m1/carette/Documents/TP1/toplevel.vhf</arg>&quot; line <arg fmt="%d" index="2">378</arg>: Output port &lt;<arg fmt="%s" index="3">Q3</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">XLXI_2</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/home/m1/carette/Documents/TP1/toplevel.vhf</arg>&quot; line <arg fmt="%d" index="2">378</arg>: Output port &lt;<arg fmt="%s" index="3">TC</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">XLXI_2</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">XLXI_1_CLR_openSignal</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">XLXI_2_CLR_openSignal</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="info" file="Xst" num="3031" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_sevenseg</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">COUNT_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">XLXI_7/XLXI_11/XLXI_2</arg>&gt;.
+</msg>
+
+</messages>
+
